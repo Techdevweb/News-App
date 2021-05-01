@@ -1103,6 +1103,11 @@
   dependencies:
     react-native-iphone-x-helper "^1.0.3"
 
+"@expo-google-fonts/alfa-slab-one@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@expo-google-fonts/alfa-slab-one/-/alfa-slab-one-0.1.0.tgz#9759e25d3795c27c67a22c68e044c09d1a720013"
+  integrity sha512-3lr8XZd/PIgMkS/B+GwWQjEjyFyWjGCx237raWWDe317IvPvPXaYWAMnrkFFIT6b9zav0MkAZ+WtWMinZl1rvw==
+
 "@expo-google-fonts/dev@^0.1.0":
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/@expo-google-fonts/dev/-/dev-0.1.0.tgz#68fa1756d4596283968d1e6f618ddbd752c17eee"

@@ -5,24 +5,19 @@ import Business from './Business'
 import Entertainment from './Entertainment'
 import Health from './Health'
 import Sports from './Sports'
-import { StyleSheet, Text, View } from 'react-native';
-import {
-  useFonts,
-  Inter_900Black,
-} from '@expo-google-fonts/inter';
+import Heading from './Heading'
+import { StyleSheet, Text, View,Animated } from 'react-native';
+import { 
+  AlfaSlabOne_400Regular
+} from '@expo-google-fonts/alfa-slab-one'
 
 function TabExample(){
   return(
     <Container>
-        <Header style={styles.container} hasTabs>
-        <Left/>
-        <Body>
-          <Title style={{
-            color:'#686d76'
-          }}>Today's Daily</Title>
-        </Body>
-      <Right/>
+        <Header  style={styles.container}>
+          <Heading/>
         </Header>
+
         <Tabs tabBarUnderlineStyle={{backgroundColor:'#ffefcf'}} renderTabBar={()=> <ScrollableTab />}>
           <Tab heading="General" activeTabStyle={{backgroundColor:'#9fd8df'}} activeTextStyle={{color:'#ffefcf'}} textStyle={{color:'black'}}>
             <General/>
@@ -46,8 +41,8 @@ function TabExample(){
 
 const styles = StyleSheet.create({
   container: {
-    height: 140,
-    backgroundColor:'#dbf6e9',
+    height: 184,
+    width: '100%',
   },
 });
 

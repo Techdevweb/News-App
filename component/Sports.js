@@ -1,6 +1,6 @@
 import React, { Component,useEffect,useState } from 'react';
-import { ActivityIndicator, FlatList, Image, SafeAreaView,Linking } from 'react-native';
-import { Container, Header, Content, Card, CardItem, Thumbnail, Text, Button, Icon, Left, Body } from 'native-base';
+import { ActivityIndicator, FlatList, Image, SafeAreaView,Linking,Share,Button,StyleSheet } from 'react-native';
+import { Container, Header, Content, Card, CardItem, Thumbnail, Text, Icon, Left, Body, View } from 'native-base';
 
 function Sports(){
   const country='in'
@@ -38,14 +38,31 @@ function Sports(){
                   </CardItem>
                   <CardItem>
                     <Body>
-                      <Image source={{uri: item.urlToImage}} style={{height: 200, width: 200, flex: 1}}/>
+                      <Image source={{uri: item.urlToImage}} style={{height: 200, width: 340, flex: 1,borderRadius:20}}/>
                       <Text>
                         {item.content}
                       </Text>
-                      <Text style={{color: 'blue'}}
-                      onPress={() => Linking.openURL(item.url)}>
-                  Go to Page
-                </Text>
+                      <View style={styles.appButtonContainer2}>
+                <Button
+                onPress={() => Linking.openURL(item.url)}
+                title="Go to the Page"
+                color="#696969"
+                accessibilityLabel="Learn more about this purple button"
+              />
+                </View>
+                <View style={styles.appButtonContainer}>
+                <Button
+                onPress={()=>{
+                  Share.share({
+                    message: 'Use this link to see the article',
+                    url: item.url,
+                    title: 'News Article'
+                  })
+                }}
+                title="Share"
+                color="white"
+              />
+                </View>
                     </Body>
                   </CardItem>
                 </Card>
@@ -57,5 +74,26 @@ function Sports(){
       </SafeAreaView>
     )
 }
+
+const styles = StyleSheet.create({
+  appButtonContainer: {
+    elevation: 8,
+    height:40,
+    width:'100%',
+    backgroundColor: "#007AFF",
+    borderRadius: 10,
+    textAlign: 'center',
+    marginTop:5
+  },
+  appButtonContainer2: {
+    elevation: 8,
+    height:40,
+    width:'100%',
+    backgroundColor: "#adff2f",
+    borderRadius: 10,
+    textAlign: 'center',
+    marginTop:5
+  }
+})
 
 export default Sports
